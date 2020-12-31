@@ -3,7 +3,7 @@ version: 2.1
 jobs:
     build_circleCI:
         docker:
-              - image: "python:3.6.1"
+            - image: "python:3.6.1"
         
         steps:
             - checkout
@@ -20,3 +20,7 @@ jobs:
                 command: |
                     . venv/bin/activate
                     make lint
+workflows:
+  default:
+    jobs:
+      - build_circleCI
